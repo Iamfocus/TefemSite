@@ -43,7 +43,7 @@
               living of ladies through media. 
          </p>
 
-         <a target="_blank" href="#" class="btn" style="background: #ff0000; border-radius: 20px; color: white;">
+         <a target="_blank" href="index.html" class="btn" style="background: #ff0000; border-radius: 20px; color: white;">
             GO bACK 
             <i class="far fa-arrow-alt-circle-left ML-2"></i>
           </a>
