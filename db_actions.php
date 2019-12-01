@@ -23,7 +23,7 @@ function insertData($data)
         $data['next_of_kin_first_name'], $data['next_of_kin_last_name'], $data['next_of_kin_address'], 
         $data['next_of_kin_phone']]);
     }catch(Exception $e){
-        echo $e->getMessage();
+        echo 'something happened';
     }
 
 }
@@ -36,7 +36,7 @@ function selectData()
         $selectStmt->execute();
         $data = $selectStmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        echo $e->getMessage();
+        echo 'something happened';
     }
     return $data;
 }
