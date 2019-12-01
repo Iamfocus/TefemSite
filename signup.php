@@ -3,7 +3,7 @@
     foreach ($_POST as $key => $value) {
         echo $key . $value;
     }
-    $acceptedData = ['first_name', 'last_name', 'email', 'phone_number', 'marital_status', 'date_of_birth', 'health_challenge',
+    $acceptedData = ['first_name', 'last_name', 'email', 'phone_number', 'marital_status', 'date_of_birth', 'health_challenge', 'address',
                 'next_of_kin_first_name', 'next_of_kin_last_name', 'next_of_kin_address', 'next_of_kin_phone'];
     $formData = array_filter($_POST, function($key) use ($acceptedData){
         return in_array($key, $acceptedData);
