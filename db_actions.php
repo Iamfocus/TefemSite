@@ -31,12 +31,12 @@ function insertData($data)
 function selectData()
 {   
     global $selectStmt;
-    //$data = [];
+    $data = [];
     try{
         $selectStmt->execute();
         $data = $selectStmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        echo 'something happened';
+        echo $e->getMessage();
     }
     return $data;
 }
