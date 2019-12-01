@@ -14,6 +14,10 @@
         die('invalid form');
     }
 
+    if($acceptedData) {
+		print "Registration complete!";
+	}
+
     insertData($cleanData);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
     exit;
