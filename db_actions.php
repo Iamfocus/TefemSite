@@ -36,7 +36,7 @@ function selectData()
         $selectStmt->execute();
         $data = $selectStmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        echo $e->getMessage();
+        echo 'something happened';
     }
     return $data;
 }
