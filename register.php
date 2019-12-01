@@ -38,7 +38,7 @@
 
           <p class="mb-4" style="color: black;">
               The female media network <strong style="color:  #ff0000;">(TEFEM)</strong>, is a program 
-              setup by a team of prominent creatives, led by Eneh Mercy, photograoher
+              setup by a team of prominent creatives, led by Eneh Mercy, photographer
               and Graphics designer, with the aim of improving the standard of 
               living of ladies through media. 
          </p>
@@ -51,7 +51,7 @@
 
       <div class="col-md-8" style="background: white; margin-top: 30px;">
           <!-- Default form register -->
-<form class="text-center border border-light p-5" action="#!">
+<form class="text-center border border-light p-5"  method='Post' action="signup.php">
 
     <p class="h4 mb-4">Sign up</p>
 
@@ -86,11 +86,11 @@
         </div>
         <div class="col-md-6">
             <!-- Last name -->
-            <input type="date" id="" name="date" class="form-control" placeholder="date of birth" required>
+            <input type="date" id="" name="date_of_birth" class="form-control" placeholder="date of birth" required>
         </div>
     </div>
 
-    <input type="text" class="form-control" name="health_challenge" placeholder="any health challenge?">
+    <input type="text" class="form-control" name="health_challenge" placeholder="Any health challenge we should know about?">
     <br>
     <small id="" class="form-text text-muted mb-4 font-weight-bold">
         Next of kin's details
@@ -99,22 +99,22 @@
     <div class="form-row mb-4">
         <div class="col-md-6 mb-4">
             <!-- First name -->
-            <input type="text" id="" name="nextOfKin1" class="form-control" placeholder="First name" required>
+            <input type="text" id="" name="next_of_kin_first_name" class="form-control" placeholder="First name" required>
         </div>
         <div class="col-md-6">
             <!-- Last name -->
-            <input type="text" id="" name="nextOfKin2" class="form-control" placeholder="Last name" required>
+            <input type="text" id="" name="next_of_kin_last_name" class="form-control" placeholder="Last name" required>
         </div>
     </div>
 
     <div class="form-row mb-4">
         <div class="col-md-6 mb-4">
             <!-- First name -->
-            <input type="number" name="nextKinPhone" id="defaultRegisterFormFirstName" class="form-control" placeholder="Phone number" required>
+            <input type="number" name="next_of_kin_phone" id="defaultRegisterFormFirstName" class="form-control" placeholder="Phone number" required>
         </div>
         <div class="col-md-6">
             <!-- Last name -->
-            <input type="text" name="nextKinAddress" id="defaultRegisterFormLastName" class="form-control" placeholder="Addresss" required>
+            <input type="text" name="next_of_kin_address" id="defaultRegisterFormLastName" class="form-control" placeholder="Addresss" required>
         </div>
     </div>
    
