@@ -158,44 +158,26 @@
     new WOW().init();
 
   </script>
-<script>
-$("#form").submit(function(e) {
-	e.preventDefault();
-	var firstName = $("#firstName").val();
-	var lastName = $("#lastName").val();
-  var email = $("#email").val()
-  var phoneNumber = $("#phoneNumber").val();
-  var dateOfBirth = $("#dateOfBirth").val();
-  var maritalStatus = $("#maritalStatus").val();
-  var healthChallenge = $("#healthChallenge").val();
-  var address = $("#address").val()
-  var dateOfBirth = $("#dateOfBirth").val();
-  var nextofKinFirst = $("#nextOfKinFirst").val();
-  var nextOfKinsecond = $("#nextOfKinSecond").val();
-  var nextOfKinaddress = $("#nextOfKinAddress").val();
-  var nextOfKinPhone = $("#nextOfKinPhone").val();
-  
-  
-  
 	
-	if(firstname == "" || lastname == "" ||  ) {
-		$("#error_message").show().html("All Fields are Required");
-	} else {
-		$("#error_message").html("").hide();
-		$.ajax({
-			type: "POST",
-			url: "post-form.php",
-			data: "name="+name+"&comment="+comment,
-			success: function(data){
-				$('#success_message').fadeIn().html(data);
-				setTimeout(function() {
-					$('#success_message').fadeOut("slow");
-				}, 2000 );
+	<script>
+          $("#form").on('submit',function(event) {
+              event.preventDefault(); 
+              var dataString = $(this).serialize(); 
+              
+              $.ajax({
+                  type: "POST",
+                  url: "signup.php",
+                  data: dataString,
+                  success: function(data){
+                      $('#form')[0].reset(); 
+                  }
+              }).done(function(data){
+                  setTimeout(function () {
+                      alert("Registration Complete");
+                  }, 2000);
+             });
 
-			}
-		});
-	}
-})
-</script>	
+          });
+      </script>
 </body>
 </html>
