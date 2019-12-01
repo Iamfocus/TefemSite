@@ -10,7 +10,7 @@ next_of_kin_first_name, next_of_kin_last_name, next_of_kin_address, next_of_kin_
 $insertStmt = $DB->prepare($insertQuery);
 
 #select statement preparation
-$selectQuery = "SELECT * FROM members";
+$selectQuery = "SELECT * FROM Members";
 $selectStmt = $DB->prepare($selectQuery);
 
 #inserter
