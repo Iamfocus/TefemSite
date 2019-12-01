@@ -1,0 +1,63 @@
+<table id="personDataTable">
+        <tr>
+            <th>Id</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>email</th>
+            <th>phone_number</th>
+            <th>marital_status</th>
+            <th>date_of_birth</th>
+            <th>last_name</th>
+            <th>health_challenge</th>
+            <th>address</th>
+            <th>course</th>
+            <th>next_of_kin_first_name</th>
+            <th>next_of_kin_last_name</th>
+            <th>next_of_kin_address</th>
+            <th>next_of_kin_phone</th>
+        </tr>
+        
+</table>
+            
+    
+    <style>
+    table {
+      border: 2px solid #666;   
+        width: 100%;
+    }
+    th {
+      background: #f8f8f8; 
+      font-weight: bold;    
+        padding: 10px;
+        border: 1px solid red;
+    }	
+    </style>
+
+    <script>
+    
+    $.ajax({
+    url: 'https://tefemnetwork.com/get_members.php',
+    type: "get",
+    dataType: "json",
+   
+    success: function(data) {
+        drawTable(data);
+    }
+});
+
+function drawTable(data) {
+    for (var i = 0; i < data.length; i++) {
+        drawRow(data[i]);
+    }
+}
+
+function drawRow(rowData) {
+    var row = $("<tr />")
+    $("#personDataTable").append(row); 
+    row.append($("<td>" + rowData.id + "</td>"));
+    row.append($("<td>" + rowData.title + "</td>"));
+    row.append($("<td>" + rowData.userId + "</td>"));
+    
+}
+
+    </script>
