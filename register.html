@@ -123,8 +123,7 @@
 
     <!-- Sign up button -->
     <button class="btn btn-info my-4 btn-block" type="submit" style="background: #ff0000 !important; border: none !important;">Sign up</button>
-    <div id="error_message" class="ajax_response" style=""></div>
-	  <div id="success_message" class="ajax_response" style=""></div>
+    
     <hr>
 
     <!-- Terms of service -->
@@ -169,17 +168,16 @@
                   url: "signup.php",
                   data: dataString,
                   success: function(data){
-                  $('#success_message').fadeIn().html(data);
-                  setTimeout(function() {
-                $('#success_message').fadeOut("slow");
-                  }, 2000 );
-      
-                    }
-                 
-             
-                });
-              
+                      $('#form')[0].reset(); 
+                  }
+              }).done(function(data){
+                  setTimeout(function () {
+                      alert("Registration Complete");
+                  }, 2000);
+             });
+
           });
       </script>
+
 </body>
 </html>
