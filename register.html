@@ -51,18 +51,18 @@
 
       <div class="col-md-8" style="background: white; margin-top: 30px;">
           <!-- Default form register -->
-<form class="text-center border border-light p-5"  method='Post' action="signup.php">
+<form class="text-center border border-light p-5"  method='Post' action="signup.php" id="form">
 
     <p class="h4 mb-4">Sign up</p>
 
     <div class="form-row mb-4">
         <div class="col-md-6 mb-4">
             <!-- First name -->
-            <input type="text" id="" name="first_name" class="form-control" placeholder="First name" required>
+            <input type="text" id="firstName" name="first_name" class="form-control" placeholder="First name" required>
         </div>
         <div class="col-md-6">
             <!-- Last name -->
-            <input type="text" id="" name="last_name" class="form-control" placeholder="Last name" required>
+            <input type="text" id="lastName" name="last_name" class="form-control" placeholder="Last name" required>
         </div>
     </div>
 
@@ -70,11 +70,11 @@
     <div class="form-row ">
         <div class="col-md-6 ">
             <!-- First name -->
-          <input type="email" id="" name="email" class="form-control mb-4" placeholder="E-mail" required>
+          <input type="email" id="email" name="email" class="form-control mb-4" placeholder="E-mail" required>
         </div>
         <div class="col-md-6 mb-4">
             <!-- Last name -->
-            <input type="number" id="" name="phone_number" class="form-control" placeholder="phone number" required>
+            <input type="number" id="phoneNumber" name="phone_number" class="form-control" placeholder="phone number" required>
         </div>
     </div>
 
@@ -82,16 +82,18 @@
     <div class="form-row mb-4">
         <div class="col-md-6 mb-4">
             <!-- First name -->
-            <input type="text" id="" name="marital_status" class="form-control" placeholder="Marital status" required>
+            <input type="text" id="maritalStatus" name="marital_status" class="form-control" placeholder="Marital status" required>
         </div>
         <div class="col-md-6">
             <!-- Last name -->
-            <input type="date" id="" name="date_of_birth" class="form-control" placeholder="date of birth" required>
+            <input type="date" id="dateOfBirth" name="date_of_birth" class="form-control" placeholder="date of birth" required>
         </div>
     </div>
 
-    <input type="text" class="form-control" name="health_challenge" placeholder="Any health challenge we should know about?">
-    <br>
+    <input type="text" id="healthChallenge" class="form-control" name="health_challenge" placeholder="Any health challenge we should know about?">
+    <input type="text" id="address" class="form-control" name="address" placeholder="Any health challenge we should know about?">
+    
+  <br>
     <small id="" class="form-text text-muted mb-4 font-weight-bold">
         Next of kin's details
     </small>
@@ -99,29 +101,30 @@
     <div class="form-row mb-4">
         <div class="col-md-6 mb-4">
             <!-- First name -->
-            <input type="text" id="" name="next_of_kin_first_name" class="form-control" placeholder="First name" required>
+            <input type="text" id="nextOfKinFirst" name="next_of_kin_first_name" class="form-control" placeholder="First name" required>
         </div>
         <div class="col-md-6">
             <!-- Last name -->
-            <input type="text" id="" name="next_of_kin_last_name" class="form-control" placeholder="Last name" required>
+            <input type="text" id=nextOfKinsSecond"" name="next_of_kin_last_name" class="form-control" placeholder="Last name" required>
         </div>
     </div>
 
     <div class="form-row mb-4">
         <div class="col-md-6 mb-4">
             <!-- First name -->
-            <input type="number" name="next_of_kin_phone" id="defaultRegisterFormFirstName" class="form-control" placeholder="Phone number" required>
+            <input type="number" name="next_of_kin_phone" id="nextOfKinPhone" class="form-control" placeholder="Phone number" required>
         </div>
         <div class="col-md-6">
             <!-- Last name -->
-            <input type="text" name="next_of_kin_address" id="defaultRegisterFormLastName" class="form-control" placeholder="Addresss" required>
+            <input type="text" name="next_of_kin_address" id="nextOfKinAddress" class="form-control" placeholder="Addresss" required>
         </div>
     </div>
    
 
     <!-- Sign up button -->
     <button class="btn btn-info my-4 btn-block" type="submit" style="background: #ff0000 !important; border: none !important;">Sign up</button>
-
+    <div id="error_message" class="ajax_response" style=""></div>
+	  <div id="success_message" class="ajax_response" style=""></div>
     <hr>
 
     <!-- Terms of service -->
@@ -155,6 +158,44 @@
     new WOW().init();
 
   </script>
+<script>
+$("#form").submit(function(e) {
+	e.preventDefault();
+	var firstName = $("#firstName").val();
+	var lastName = $("#lastName").val();
+  var email = $("#email").val()
+  var phoneNumber = $("#phoneNumber").val();
+  var dateOfBirth = $("#dateOfBirth").val();
+  var maritalStatus = $("#maritalStatus").val();
+  var healthChallenge = $("#healthChallenge").val();
+  var address = $("#address").val()
+  var dateOfBirth = $("#dateOfBirth").val();
+  var nextofKinFirst = $("#nextOfKinFirst").val();
+  var nextOfKinsecond = $("#nextOfKinSecond").val();
+  var nextOfKinaddress = $("#nextOfKinAddress").val();
+  var nextOfKinPhone = $("#nextOfKinPhone").val();
+  
+  
+  
+	
+	if(firstname == "" || lastname == "" ||  ) {
+		$("#error_message").show().html("All Fields are Required");
+	} else {
+		$("#error_message").html("").hide();
+		$.ajax({
+			type: "POST",
+			url: "post-form.php",
+			data: "name="+name+"&comment="+comment,
+			success: function(data){
+				$('#success_message').fadeIn().html(data);
+				setTimeout(function() {
+					$('#success_message').fadeOut("slow");
+				}, 2000 );
 
+			}
+		});
+	}
+})
+</script>	
 </body>
 </html>
