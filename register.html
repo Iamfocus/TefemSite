@@ -91,7 +91,7 @@
     </div>
 
     <input type="text" id="healthChallenge" class="form-control" name="health_challenge" placeholder="Any health challenge we should know about?">
-    <input type="text" id="address" class="form-control" name="address" placeholder="Any health challenge we should know about?">
+    <input type="text" id="address" class="form-control" name="address" placeholder="address">
     
   <br>
     <small id="" class="form-text text-muted mb-4 font-weight-bold">
@@ -169,14 +169,16 @@
                   url: "signup.php",
                   data: dataString,
                   success: function(data){
-                      $('#form')[0].reset(); 
-                  }
-              }).done(function(data){
-                  setTimeout(function () {
-                      alert("Registration Complete");
-                  }, 2000);
-             });
-
+                  $('#success_message').fadeIn().html(data);
+                  setTimeout(function() {
+                $('#success_message').fadeOut("slow");
+                  }, 2000 );
+      
+                    }
+                 
+             
+                });
+              
           });
       </script>
 </body>
