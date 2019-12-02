@@ -19,9 +19,9 @@ function insertData($data)
     global $insertStmt;
     try{
         $insertStmt->execute([$data['first_name'], $data['last_name'], $data['email'], 
-        $data['phone_number'], $data['marital_status'], $data['date_of_birth'], $data['health_challenge'], $data['address'], $data['courses'],
-        $data['next_of_kin_first_name'], $data['next_of_kin_last_name'], $data['next_of_kin_address'], 
-        $data['next_of_kin_phone']]);
+        $data['phone_number'], $data['marital_status'], $data['date_of_birth'], $data['health_challenge'], 
+        $data['address'], $data['courses'], $data['next_of_kin_first_name'], $data['next_of_kin_last_name'], 
+        $data['next_of_kin_address'], $data['next_of_kin_phone']]);
     }catch(Exception $e){
         echo 'something happened';
     }
