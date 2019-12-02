@@ -1,12 +1,13 @@
 <html>
 
 <style>
-#formTable {
-	border: 1px solid black;
-	width: 100%;
-        margin-bottom: 20px;
-}
 
+
+#formTable{
+    border: 1px solid black;
+	width: 100%;
+    margin-bottom: 20px;
+}
 
  th{
 padding-right:  40px;
@@ -17,7 +18,7 @@ border-right: 1px solid black;
 </style>
 
 <body>
-<h2>
+     <h2>
         Tefem Registration 
     </h2>
     <table id="formTable">
@@ -29,6 +30,7 @@ border-right: 1px solid black;
                 <th>phone_number</th>
                 <th>marital_status</th>
                 <th>date_of_birth</th>
+                <th>last_name</th>
                 <th>health_challenge</th>
                 <th>address</th>
                 <th>course</th>
@@ -44,7 +46,7 @@ border-right: 1px solid black;
     
     <script>
     
-    $.getJSON('', function(data){
+    $.getJSON('https://www.tefemnetwork.com/get_members.php', function(data){
 	/* console.log(data); */
   $(data).each(function(i, form){
   	$('#tefemTable').append($("<tr>")
