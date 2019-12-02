@@ -1,8 +1,12 @@
 <?php 
 require_once 'db_config.php';
 
-$DB = new pdo("mysql:host=$db_host;dbname=$db_name", $db_username, $db_password);
-$DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try{
+    $DB = new pdo("mysql:host=$db_host;dbname=$db_name", $db_username, $db_password);
+    $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}catch(Exception $e){
+    echo 'User not authenticated';
+}
 
 #insert statement preparation
 $insertQuery  = "INSERT INTO Members ( first_name, last_name, email, phone_number, marital_status, date_of_birth, health_challenge, 

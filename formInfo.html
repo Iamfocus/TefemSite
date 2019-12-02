@@ -27,14 +27,13 @@ border-right: 1px solid black;
     </h2>
     <table id="formTable">
         <thead>
-                <th>Id</th>
+            <tr>
                 <th>first_name</th>
                 <th>last_name</th>
                 <th>email</th>
                 <th>phone_number</th>
                 <th>marital_status</th>
                 <th>date_of_birth</th>
-                <th>last_name</th>
                 <th>health_challenge</th>
                 <th>address</th>
                 <th>course</th>
@@ -42,6 +41,7 @@ border-right: 1px solid black;
                 <th>next_of_kin_last_name</th>
                 <th>next_of_kin_address</th>
                 <th>next_of_kin_phone</th>
+            </tr>
         </thead>
         <tbody id="tefemtable"></tbody>
     </table>
@@ -50,24 +50,25 @@ border-right: 1px solid black;
     
     <script>
     
-    $.getJSON('/get_members.php', function(data){
-	/* console.log(data); */
-  $(data).each(function(i, form){
-  	$('#tefemTable').append($("<tr>")
-      .append($("<td>").append(form.first_name))
-      .append($("<td>").append(form.last_name))
-      .append($("<td>").append(form.email))
-      .append($("<td>").append(form.phone_number))
-      .append($("<td>").append(form.marital_status))
-      .append($("<td>").append(form.date_of_birth))
-      .append($("<td>").append(form.health_challenge))
-      .append($("<td>").append(form.address))
-      .append($("<td>").append(form.course))
-      .append($("<td>").append(form.next_of_kin_first_name))
-      .append($("<td>").append(form.next_of_kin_last_name))
-      .append($("<td>").append(form.next_of_kin_address))
-      .append($("<td>").append(form.next_of_kin_phone))
-      
+    $.getJSON('get_members.php', function(data){
+	 console.log(data); 
+    $.each(data, function(key, value){
+  	    $('#tefemtable')
+            .append($("<tr>")
+            .append($("<td>").append(value.first_name)).append($("</td>"))
+            .append($("<td>").append(value.last_name)).append($("</td>"))
+            .append($("<td>").append(value.email)).append($("</td>"))
+            .append($("<td>").append(value.phone_number)).append($("</td>"))
+            .append($("<td>").append(value.marital_status)).append($("</td>"))
+            .append($("<td>").append(value.date_of_birth)).append($("</td>"))
+            .append($("<td>").append(value.health_challenge)).append($("</td>"))
+            .append($("<td>").append(value.address)).append($("</td>"))
+            .append($("<td>").append(value.course)).append($("</td>"))
+            .append($("<td>").append(value.next_of_kin_first_name)).append($("</td>"))
+            .append($("<td>").append(value.next_of_kin_last_name)).append($("</td>"))
+            .append($("<td>").append(value.next_of_kin_address)).append($("</td>"))
+            .append($("<td>").append(value.next_of_kin_phone)).append($("</td>"))
+            .append($("</tr>"))  
         );
   });
 })
@@ -79,7 +80,7 @@ border-right: 1px solid black;
 		console.error(e);
 	})
 	.always(function(){
-		alert("always runs");
+		
 	});
     
     </script>
