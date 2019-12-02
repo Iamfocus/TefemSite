@@ -50,7 +50,7 @@ border-right: 1px solid black;
     
     <script>
     
-    $.getJSON('https://www.tefemnetwork.com/get_members.php', function(data){
+    $.getJSON('/get_members.php', function(data){
 	/* console.log(data); */
   $(data).each(function(i, form){
   	$('#tefemTable').append($("<tr>")
