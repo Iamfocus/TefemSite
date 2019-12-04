@@ -83,9 +83,9 @@ class HomeController extends Controller
             [
                 'first_name'=>'required|string',
                 'last_name'=>'required|string',
-                'email'=>'required|email|unique:Members',
+                'email'=>'required|email|unique:members',
                 'address'=>'required|string',
-                'phone_number'=>'required|unique:Members',
+                'phone_number'=>'required|unique:members',
                 'marital_status'=>'required|string', 
                 'date_of_birth' => 'required|string', 
                 'health_challenge'=> 'required|string', 
