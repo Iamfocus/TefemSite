@@ -1,6 +1,6 @@
 <?php 
     $db_host = 'localhost';
-	$db_name = 'tefem';
-	$db_username = 'medialady';
-	$db_password = 'medialadyedemede';
+	$db_name = 'projectx';
+	$db_username = 'UZU';
+	$db_password = 'uzu1';
 ?>

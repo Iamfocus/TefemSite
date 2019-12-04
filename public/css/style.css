@@ -12,6 +12,11 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
+.uzu{
+ width: 30px;
+ height: 30px;
+ margin-left: auto !important;
+}
 
 /* Position the content inside the overlay */
 .overlay-content {
@@ -293,3 +298,4 @@ video {
   width: 100%;
   max-height: 100%;
 }
+

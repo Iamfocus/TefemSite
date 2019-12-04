@@ -7,7 +7,11 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
-
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 var slideIndex = 1;
 showSlides(slideIndex);
 

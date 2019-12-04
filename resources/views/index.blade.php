@@ -5,19 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Tefem</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{url('public/css/bootstrap.min.css')}}" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="{{url('public/css/mdb.min.css')}}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="css/style.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/bootstrap.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/animate.css">
-  <link href="css/rotating-card.css" rel="stylesheet" />
+  <link href="{{url('public/css/style.min.css')}}" rel="stylesheet">
+  <link href="{{url('public/css/style.css')}}" rel="stylesheet">
+  <link href="{{url('public/css/bootstrap.css')}}" rel="stylesheet" />
+  <link rel="stylesheet" href="{{url('public/css/animate.css')}}">
+  <link href="{{url('public/css/rotating-card.css')}}" rel="stylesheet" />
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
   
@@ -34,7 +35,7 @@
     <a class="scroll"onclick="closeNav()"  href="#whoWe">About</a>
     <a class="scroll" onclick="closeNav()"  href="#Services">Services</a>
     <a class="scroll" onclick="closeNav()"  href="#gallery">Gallery</a>
-    <a class="scroll" onclick="closeNav()"  href="events.html">Events</a>
+    <a class="scroll" onclick="closeNav()"  href="{{url('/events')}}">Events</a>
     <a class="scroll" onclick="closeNav()"  href="#contact">Contact</a>
   </div>
 
@@ -60,10 +61,10 @@
 
       <!--First slide-->
       <div class="carousel-item active">
-        <div id="intro" class="view parallax" style="background-image: url('images/attract.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div id="intro" class="view parallax" style="background-image: url('{{url('public/images/attract.jpg')}}'); background-repeat: no-repeat; background-size: cover;">
   
                  <span>
-        <img src="images/foc.png" alt="Tefem" class="img-fluid wow zoomIn" data-wow-duration="2s" data-wow-delay="2s;" style="max-width: 200px; padding-left: 10px; ">
+        <img src="{{url('public/images/foc.png')}}" alt="Tefem" class="img-fluid wow zoomIn" data-wow-duration="2s" data-wow-delay="2s;" style="max-width: 200px; padding-left: 10px; ">
              </span>
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -94,7 +95,7 @@
 </div>
              
 
-              <button onclick="window.location.href = 'register.html';" class="btn" id="myBtn" style="background: #ff0000; border-radius: 10px; color: white; font-family: verdana;">
+              <button onclick="window.location.href = '{{url('/register')}}';" class="btn" id="myBtn" style="background: #ff0000; border-radius: 10px; color: white; font-family: verdana;">
                 Register now
                 <i class="fas fa-user-friends ml-2"></i> </button>
               
@@ -110,9 +111,9 @@
 
       <!--Second slide-->
       <div class="carousel-item">
-        <div class="view parallax" style="background-image: url('images/camera.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view parallax" style="background-image: url('{{url('public/images/camera.jpg')}}'); background-repeat: no-repeat; background-size: cover;">
  <span>
-        <img src="images/foc.png" alt="Tefem" class="img-fluid" style="max-width: 200px; padding-left: 10px;">
+        <img src="{{url('public/images/foc.png')}}" alt="Tefem" class="img-fluid" style="max-width: 200px; padding-left: 10px;">
              </span>
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -139,7 +140,7 @@
 
               </center>
 
-            <button onclick="window.location.href = 'register.html';" class="btn" id="myBtn" style="background: #ff0000; border-radius: 10px; color: white; font-family: verdana;">
+            <button onclick="window.location.href = '{{url('register')}}';" class="btn" id="myBtn" style="background: #ff0000; border-radius: 10px; color: white; font-family: verdana;">
                 Register now
                 <i class="fas fa-user-friends ml-2"></i> </button>
             </div>
@@ -154,10 +155,10 @@
 
       <!--Third slide-->
       <div class="carousel-item">
-        <div class="view parallax" style="background-image: url('images/tefem3.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view parallax" style="background-image: url('{{url('public/images/tefem3.jpg')}}'); background-repeat: no-repeat; background-size: cover;">
 
            <span>
-        <img src="images/foc.png" alt="Tefem" class="img-fluid" style=" max-width: 200px;" >
+        <img src="{{url('public/images/foc.png')}}" alt="Tefem" class="img-fluid" style=" max-width: 200px;" >
              </span>
 
           <!-- Mask & flexbox options-->
@@ -184,7 +185,7 @@
 
               </center>
 
-               <button onclick="window.location.href = 'register.html';" class="btn" id="myBtn" style="background: #ff0000; border-radius: 10px; color: white; font-family: verdana;">
+               <button onclick="window.location.href = '{{url('register')}}';" class="btn" id="myBtn" style="background: #ff0000; border-radius: 10px; color: white; font-family: verdana;">
                 Register now
                 <i class="fas fa-user-friends ml-2"></i> </button>
             </div>
@@ -234,7 +235,7 @@
           <!--Grid column-->
           <div class="col-md-6 mb-4">
 
-            <img src="images/tefem4.jpg" class="img-fluid z-depth-1-half wow zoomIn" data-wow-duration="2s" data-wow-duration="3s;"
+            <img src="{{url('public/images/tefem4.jpg')}}" class="img-fluid z-depth-1-half wow zoomIn" data-wow-duration="2s" data-wow-duration="3s;"
               alt="">
 
           </div>
@@ -272,7 +273,7 @@
             </p>
 
             <!-- CTA -->
-            <a target="_blank" href="register.html" class="btn" style="background: #ff0000; border-radius: 20px; color: white;">
+            <a target="_blank" href="{{url('register')}}" class="btn" style="background: #ff0000; border-radius: 20px; color: white;">
                 REGISTER Now
                 <i class="fas fa-user-friends ml-2"></i>
               </a>
@@ -304,10 +305,10 @@
                 <div class="card">
                     <div class="front">
                         <div class="cover">
-                            <img src="images/abc.jpg"/>
+                            <img src="{{url('public/images/abc.jpg')}}"/>
                         </div>
                         <div class="user">
-                            <img class="img-circle" src="images/124.jpg"/>
+                            <img class="img-circle" src="{{url('public/images/124.jpg')}}"/>
                         </div>
                         <div class="content">
                             <div class="main">
@@ -369,10 +370,10 @@
                 <div class="card">
                     <div class="front">
                         <div class="cover">
-                            <img src="images/camera-coffee.jpg"/>
+                            <img src="{{url('public/images/camera-coffee.jpg')}}"/>
                         </div>
                         <div class="user">
-                            <img class="img-circle" src="images/accounting.jpg"/>
+                            <img class="img-circle" src="{{url('public/images/accounting.jpg')}}"/>
                         </div>
                         <div class="content">
                             <div class="main">
@@ -435,10 +436,10 @@
                 <div class="card">
                     <div class="front">
                         <div class="cover">
-                            <img src="images/blur.jpg"/>
+                            <img src="{{url('public/images/blur.jpg')}}"/>
                         </div>
                         <div class="user">
-                            <img class="img-circle" src="images/123.jpg"/>
+                            <img class="img-circle" src="{{url('public/images/123.jpg')}}"/>
                         </div>
                         <div class="content">
                             <div class="main">
@@ -517,7 +518,7 @@
   
 <div class="col-md-4 mb-1">
   <center>
-              <img class="img-circle wow zoomIn" data-wow-duration="2s" data-wow-duration="3s;" src="images/enehmercy.jpeg" style="border-radius: 80px;" />
+              <img class="img-circle wow zoomIn" data-wow-duration="2s" data-wow-duration="3s;" src="{{url('public/images/enehmercy.jpeg')}}" style="border-radius: 80px;" />
             </center>
             
             <h4 class="my-4 red-text text wow zoomIn" data-wow-duration="2s" data-wow-duration="3s;" style="text-align: center;">Meet Eneh Mercy</h4>
@@ -533,32 +534,32 @@
   <!-- Full-width images with number text -->
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-      <img src="images/family2.jpg" style="width:100%">
+      <img src="{{url('public/images/family2.jpg')}}" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-      <img src="images/family1.jpg" style="width:100%">
+      <img src="{{url('public/images/family1.jpg')}}" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-      <img src="images/tefem3.jpg" style="width:100%">
+      <img src="{{url('public/images/tefem3.jpg')}}" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-      <img src="images/family3.jpg" style="width:100%">
+      <img src="{{url('public/images/family3.jpg')}}" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">5 / 6</div>
-      <img src="images/tefem1.jpg" style="width:100%">
+      <img src="{{url('public/images/tefem1.jpg')}}" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">6 / 6</div>
-      <img src="images/tefem2.jpg" style="width:100%">
+      <img src="{{url('public/images/tefem2.jpg')}}" style="width:100%">
   </div>
 
   <!-- Next and previous buttons -->
@@ -573,22 +574,22 @@
   <!-- Thumbnail images -->
   <div class="row1">
     <div class="column">
-      <img class="demo cursor" src="images/family2.jpg" style="width:100%; height: 40px;" onclick="currentSlide(1)" alt="Always happy">
+      <img class="demo cursor" src="{{url('public/images/family2.jpg')}}" style="width:100%; height: 40px;" onclick="currentSlide(1)" alt="Always happy">
     </div>
     <div class="column"> 
-      <img class="demo cursor" src="images/family1.jpg" style="width:100%; height: 40px;" onclick="currentSlide(2)" alt="Satisfaction">
+      <img class="demo cursor" src="{{url('public/images/family1.jpg')}}" style="width:100%; height: 40px;" onclick="currentSlide(2)" alt="Satisfaction">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/tefem3.jpg" style="width:100%; height: 40px;" onclick="currentSlide(3)" alt="Encouragement">
+      <img class="demo cursor" src="{{url('public/images/tefem3.jpg')}}" style="width:100%; height: 40px;" onclick="currentSlide(3)" alt="Encouragement">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/family3.jpg" style="width:100%; height: 40px;" onclick="currentSlide(4)" alt="Impacting">
+      <img class="demo cursor" src="{{url('public/images/family3.jpg')}}" style="width:100%; height: 40px;" onclick="currentSlide(4)" alt="Impacting">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/tefem2.jpg" style="width:100%; height: 40px;" onclick="currentSlide(5)" alt="Encouragement">
+      <img class="demo cursor" src="{{url('public/images/tefem2.jpg')}}" style="width:100%; height: 40px;" onclick="currentSlide(5)" alt="Encouragement">
     </div> 
     <div class="column">
-      <img class="demo cursor" src="images/tefem2.jpg" style="width:100%; height: 40px;" onclick="currentSlide(6)" alt="Much Joy">
+      <img class="demo cursor" src="{{url('public/images/tefem2.jpg')}}" style="width:100%; height: 40px;" onclick="currentSlide(6)" alt="Much Joy">
     </div>
   </div>
 </div>
@@ -620,7 +621,7 @@
     <div class="col-md-7 wow zoomIn mb-4" data-wow-duration="2s" data-wow-duration="3s;">
 
       <!-- Slideshow container -->
-<div class="slideshow-container" style="background: url('images/img_lights_wide.jpg');">
+<div class="slideshow-container" style="background: url('{{url('public/images/img_lights_wide.jpg')}}');">
 
   <!-- Full-width slides/quotes -->
   <div class="mySlides1 white-text">
@@ -668,8 +669,8 @@
 
     <div class="col-md-5">
 
-<video controls poster="images/family1.jpg">
-  <source src="tefem.mp4" type="video/mp4">
+<video controls poster="{{url('public/images/family1.jpg')}}">
+  <source src="{{url('public/tefem.mp4')}}" type="video/mp4">
 
 </video>
 
@@ -690,7 +691,7 @@
   <br>
 
 <section id="OurStatistics">
-  <div class="container-fluid" style="background: url('images/locker.jpg'); padding: 50px;">
+  <div class="container-fluid" style="background: url('{{url('public/images/locker.jpg')}}'); padding: 50px;">
     <h5 class="title white-text">
             Statistics
         
@@ -816,7 +817,7 @@
         
 <div class="col-md-4 wow zoomIn" data-wow-duration="2s" data-wow-duration="3s;">
 
-<img src="images/foc.png" class="img-fluid" style="max-width: 140px;">
+<img src="{{url('public/images/foc.png')}}" class="img-fluid" style="max-width: 140px;">
 
       </div>
 
@@ -876,8 +877,8 @@
     <div class="footer-copyright py-3 wow zoomIn" data-wow-duration="2s" data-wow-duration="3s" style="border-top: 1px solid white;">
       © 2019 Copyright:
       <a href="https://tefemnetwork.com" target="_blank"> tefemnetwork.com</a> <br />
-      <p> Rapidly developed by Uzucorp</p>
     </div>
+    <div class="text-center d-block  text-white "><img src="https://uzucorp.com/uzu.jpg" class="rounded-circle uzu" alt="uzucorp.com" height="40px" width="40px">      Rapidly developed by <a href="https://uzucorp.com/">Uzucorp</a> </div>
     <!--/.Copyright-->
 
   </footer>
@@ -885,14 +886,14 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="{{url('public/js/jquery-3.4.1.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="{{url('public/js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{url('public/js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script type="text/javascript" src="js/tefem.js"></script>
+  <script type="text/javascript" src="{{url('public/js/mdb.min.js')}}"></script>
+  <script type="text/javascript" src="{{url('public/js/tefem.js')}}"></script>
 
   <!-- Initializations -->
   <script type="text/javascript">
