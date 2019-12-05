@@ -54,7 +54,6 @@
 <form class="text-center border border-light p-5" id="form">
 
     <p class="h4 mb-4">Sign up</p>
-    <div id="errors" class="d-none card card-block w-75 mx-auto mb-3 "></div>
     <div class="form-row mb-4">
         <div class="col-md-6 mb-4">
             <!-- First name -->
@@ -132,8 +131,8 @@
    
 
     <!-- Sign up button -->
-    <button class="btn btn-info my-4 btn-block" type="submit" style="background: #ff0000 !important; border: none !important;">Sign up</button>
-    
+    <button class="btn btn-info my-4 btn-block" id="submit-btn" type="submit" style="background: #ff0000 !important; border: none !important;">Sign up</button>
+    <div id="errors" class="d-none card card-block w-100 mx-auto mb-3 "></div>
     <hr>
 
     <!-- Terms of service -->
@@ -178,11 +177,11 @@
             })
             return val
         }
-        
+        var spinner = "<div class='spinner-grow text-light' role='status'><span class='sr-only'>Loading...</span></div>"
           $("#form").on('submit',function(event) {
               event.preventDefault(); 
               var dataString = $(this).serialize(); 
-              
+              $('#submit-btn').text('').append(spinner);
               $.ajax({
                   type: "POST",
                   url: "{{url('/register')}}",
@@ -193,10 +192,11 @@
                       setTimeout(function(){
                           $("#errors").removeClass("d-block border border-success ")
                           $("#errors").text('')
-                      }, 3000)
+                      }, 7000)
                       $("#errors").addClass("d-block border border-success ")
                       $("#errors").append('Registration Successful!!')
                       $('#form')[0].reset();
+                      $('#submit-btn').text('SIGN UP')
                   }
                   else{
                      info = data.error
@@ -207,7 +207,7 @@
                           $("#email").removeClass('border border-danger')
                           $("#email-label").removeClass('d-block border border-danger').addClass('d-none')
                           $("#email-label").text('')
-                          }, 7000)
+                          }, 10000)
                               $("#email").addClass('border border-danger')
                               $("#email-label").addClass('d-block border border-danger')
                               $("#email-label").append(email)
@@ -217,7 +217,7 @@
                           $("#phoneNumber").removeClass('border border-danger')
                           $("#phone-label").removeClass('d-block border border-danger').addClass('d-none')
                           $("#phone-label").text('')
-                          }, 7000)
+                          }, 10000)
                               $("#phoneNumber").addClass('border border-danger')
                               $("#phone-label").addClass('d-block border border-danger')
                               $("#phone-label").append(phone)
@@ -228,11 +228,12 @@
                           $("#errors").removeClass("d-block border border-danger")
                           $("#errors").text('')
                       }, 3000);
-                         
+                         $('#submit-btn').text('SIGN UP')
                           
                   }
                    
              }).fail(function(){
+                 $('#submit-btn').text('SIGN UP')
                   setTimeout(function(){
                          $("#errors").removeClass("d-block border border-danger").addClass('d-none')
                           $("#errors").empty()
